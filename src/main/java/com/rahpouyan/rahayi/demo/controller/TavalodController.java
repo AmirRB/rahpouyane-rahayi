@@ -1,6 +1,7 @@
 package com.rahpouyan.rahayi.demo.controller;
 
 import com.rahpouyan.rahayi.demo.commom.CalendarTool;
+import com.rahpouyan.rahayi.demo.commom.CustomException;
 import com.rahpouyan.rahayi.demo.commom.UploadFile;
 import com.rahpouyan.rahayi.demo.model.entity.Tavalod;
 import com.rahpouyan.rahayi.demo.model.service.TavalodService;
@@ -33,6 +34,12 @@ public class TavalodController {
     @GetMapping("/findAll")
     public Object findAll(@RequestParam int index, @RequestParam int lenght, @RequestParam String type, @RequestParam(required = false) String name) {
         return tavalodService.findAll(index, lenght, type, name);
+    }
+
+    @ResponseBody
+    @GetMapping("/findOne")
+    public Object findOne(@RequestParam Long id) throws CustomException {
+        return tavalodService.findOne(id);
     }
 
     @ResponseBody
