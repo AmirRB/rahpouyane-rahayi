@@ -143,4 +143,10 @@ public class TavalodController {
     }
 
 
+    @ResponseBody
+    @RequestMapping("increment")
+    public void inc(@RequestParam long id) throws Exception {
+        tavalodService.addViewNumber(id);
+    }
+
 }
