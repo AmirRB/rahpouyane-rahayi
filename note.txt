@@ -1,0 +1,5 @@
+1) recordVersion for delete in textPost not perform (front end)
+3) hala bayad tu frontend list dorost konam baraye pic-park
+4) findAll in image and post image
+5) delete in image and post image
+6) update in image and post image
