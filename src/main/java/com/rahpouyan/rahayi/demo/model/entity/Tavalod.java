@@ -11,7 +11,7 @@ public class Tavalod {
     @Column(columnDefinition = "number")
     private Long id;
 
-    @Column(columnDefinition = "varchar2(50)")
+    @Column(columnDefinition = "varchar2(50)", nullable = false)
     private String name;
 
     @Column(columnDefinition = "nvarchar2(20)", nullable = false)
