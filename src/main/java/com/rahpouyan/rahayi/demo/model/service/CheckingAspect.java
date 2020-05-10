@@ -20,15 +20,15 @@ public class CheckingAspect {
             if (arg instanceof Tavalod) {
 
                 Tavalod tavalod = (Tavalod) arg;
-                if (tavalod.getName() == null) {
+                if (tavalod.getName().trim() == null || tavalod.getName().trim().equals("")) {
                     throw new CustomException("name is null");
                 }
 
-                if (tavalod.getType() == null) {
+                if (tavalod.getType().trim() == null) {
                     throw new CustomException("type is null");
                 }
 
-                if (tavalod.getImageFileName() == null) {
+                if (tavalod.getImageFileName().trim() == null) {
                     throw new CustomException("imageFileName is null");
                 }
 
@@ -45,10 +45,11 @@ public class CheckingAspect {
                 }
 
                 if (tavalod.getEnterYear() == 0 || tavalod.getEnterYear() == null) {
-                    throw new CustomException("year is null");
+                    throw new CustomException("enter of year is null");
                 }
 
             }
+
         }
         return point.proceed();
     }
@@ -61,8 +62,8 @@ public class CheckingAspect {
             return point.proceed();
         } catch (Exception e) {
             for (Object arg : point.getArgs()) {
-                if(arg instanceof RedirectAttributes) {
-                    ((RedirectAttributes) arg).addAttribute("error",ExceptionWrapper.getMessage(e));
+                if (arg instanceof RedirectAttributes) {
+                    ((RedirectAttributes) arg).addAttribute("error", ExceptionWrapper.getMessage(e));
                     return "redirect:/tavalod/error";
                 }
             }
