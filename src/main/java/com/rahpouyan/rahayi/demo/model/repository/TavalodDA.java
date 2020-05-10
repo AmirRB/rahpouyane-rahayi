@@ -44,9 +44,9 @@ public class TavalodDA {
 
 
     public void addViewNumber(Long id) {
-        ImagePost imagePost = entityManager.find(ImagePost.class, id);
-        imagePost.setViewNumber(imagePost.getViewNumber() + 1);
-        entityManager.merge(imagePost);
+        Tavalod tavalod = entityManager.find(Tavalod.class, id);
+        tavalod.setViewNumber(tavalod.getViewNumber() + 1);
+        entityManager.merge(tavalod);
     }
 
     public List<Tavalod> findAll(int index, int lenght, String type, String name) {
