@@ -1,5 +1,6 @@
 package com.rahpouyan.rahayi.demo.controller;
 
+import com.rahpouyan.rahayi.demo.Information;
 import com.rahpouyan.rahayi.demo.commom.CalendarTool;
 import com.rahpouyan.rahayi.demo.commom.UploadFile;
 import com.rahpouyan.rahayi.demo.model.entity.Image;
@@ -18,7 +19,7 @@ import java.util.HashMap;
 
 @Controller
 @RequestMapping("/text_post")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = Information.frontAddress)
 public class TextPostController {
 
     @Autowired

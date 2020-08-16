@@ -1,5 +1,6 @@
 package com.rahpouyan.rahayi.demo.controller;
 
+import com.rahpouyan.rahayi.demo.Information;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
@@ -13,7 +14,7 @@ import java.io.*;
 import java.net.URLConnection;
 
 @Controller
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = Information.frontAddress)
 public class Download {
 
     @Value("${upload.address.image}")

@@ -1,5 +1,6 @@
 package com.rahpouyan.rahayi.demo.controller;
 
+import com.rahpouyan.rahayi.demo.Information;
 import com.rahpouyan.rahayi.demo.model.entity.Namayandegi;
 import com.rahpouyan.rahayi.demo.model.service.NamayandegiService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/namayandegi")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = Information.frontAddress)
 public class NamayandegiController {
 
     @Autowired
@@ -17,7 +18,7 @@ public class NamayandegiController {
     @GetMapping("/findAll")
     @ResponseBody
     public Object findAll(@RequestParam(required = false) String city) {
-        return namayandegiService.findAll(city);
+        return namayandegiService.findAll(city.trim());
     }
 
     @GetMapping("/getCities")

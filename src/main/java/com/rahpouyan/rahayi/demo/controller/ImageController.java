@@ -1,5 +1,6 @@
 package com.rahpouyan.rahayi.demo.controller;
 
+import com.rahpouyan.rahayi.demo.Information;
 import com.rahpouyan.rahayi.demo.commom.UploadFile;
 import com.rahpouyan.rahayi.demo.model.entity.Image;
 import com.rahpouyan.rahayi.demo.model.service.ImageService;
@@ -16,7 +17,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/image")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = Information.frontAddress)
 public class ImageController {
 
     @Autowired

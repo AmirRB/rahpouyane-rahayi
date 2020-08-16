@@ -1,10 +1,13 @@
 package com.rahpouyan.rahayi.demo.controller;
 
+import com.rahpouyan.rahayi.demo.Information;
 import org.apache.log4j.Logger;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins = Information.frontAddress)
 public class Test {
 
 

@@ -1,5 +1,6 @@
 package com.rahpouyan.rahayi.demo.controller;
 
+import com.rahpouyan.rahayi.demo.Information;
 import com.rahpouyan.rahayi.demo.commom.CalendarTool;
 import com.rahpouyan.rahayi.demo.commom.CustomException;
 import com.rahpouyan.rahayi.demo.commom.UploadFile;
@@ -18,7 +19,7 @@ import java.util.HashMap;
 
 @Controller
 @RequestMapping("/tavalod")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = Information.frontAddress)
 public class TavalodController {
 
     @Autowired
